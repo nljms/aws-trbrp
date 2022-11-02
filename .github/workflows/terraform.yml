@@ -14,31 +14,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Terraform
-        working-directory: ./terraform
         uses: hashicorp/setup-terraform@v1
         with:
           # terraform_version: 0.13.0
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - name: Terraform Format
-        working-directory: ./terraform
         id: fmt
         run: terraform fmt -check
-      - name: Terraform Init
         working-directory: ./terraform
+      - name: Terraform Init
         id: init
         run: terraform init
-      - name: Terraform Validate
         working-directory: ./terraform
+      - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
-      - name: Terraform Plan
         working-directory: ./terraform
+      - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color -input=false
+        working-directory: ./terraform
         continue-on-error: true
       - name: Update Pull Request
-        working-directory: ./terraform
         uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         env:
@@ -68,10 +66,10 @@ jobs:
               body: output
             })
       - name: Terraform Plan Status
-        working-directory: ./terraform
         if: steps.plan.outcome == 'failure'
         run: exit 1
-      - name: Terraform Apply
         working-directory: ./terraform
+      - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false --var "organization_name"=${{ secrets.ORGANIZATION_NAME }}
+        working-directory: ./terraform
