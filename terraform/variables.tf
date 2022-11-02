@@ -1,3 +1,3 @@
-variable "organization_name" {
+variable "repository_url" {
   type = string
 }
