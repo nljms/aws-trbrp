@@ -14,7 +14,7 @@ terraform {
   }
 
   cloud {
-    organization = var.organization_name
+    organization = "moretonblue-demo"
 
     workspaces {
       name = "gh-actions-demo"
