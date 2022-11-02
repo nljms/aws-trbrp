@@ -32,4 +32,6 @@ resource "aws_amplify_app" "aws-trbrp" {
   environment_variables = {
     ENV = "dev"
   }
+
+  access_token = var.github_token
 }

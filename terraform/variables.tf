@@ -9,3 +9,7 @@ variable "aws_access_key_id" {
 variable "aws_secret_key" {
   type = string
 }
+
+variable "github_token" {
+  type = string
+}

@@ -75,4 +75,5 @@ jobs:
           terraform apply -auto-approve
           --var "aws_access_key_id"=${{ secrets.AWS_ACCESS_KEY_ID }}
           --var "aws_secret_key"=${{ secrets.AWS_ACCESS_KEY_ID }}
+          --var "github_token"=${{ secrets.GH_TOKEN }}
         working-directory: ./terraform
