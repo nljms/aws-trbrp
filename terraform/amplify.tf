@@ -1,6 +1,6 @@
 resource "aws_amplify_app" "aws-trbrp" {
   name       = "aws-trbrp"
-  repository = var.repository_url
+  repository = "https://github.com/nljms/aws-trbrp"
 
   # The default build_spec added by the Amplify Console for React.
   build_spec = <<-EOT
