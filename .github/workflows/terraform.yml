@@ -73,6 +73,6 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           terraform apply -auto-approve
-          --var "organization_name"=${{ secrets.ORGANIZATION_NAME }}
-          --var "repository_url"="${{ github.server_url }}/${{ github.repository }}"
+          --var "aws_access_key_id"=${{ secrets.AWS_ACCESS_KEY_ID }}
+          --var "aws_secret_key"=${{ secrets.AWS_ACCESS_KEY_ID }}
         working-directory: ./terraform

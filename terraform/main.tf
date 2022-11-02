@@ -1,6 +1,9 @@
 # Configure the AWS Provider
 provider "aws" {
   region = "ap-southeast-2"
+  alias = "demo-account"
+  access_key = var.aws_access_key_id
+  secret_key = var.aws_secret_key
 }
 
 terraform {
