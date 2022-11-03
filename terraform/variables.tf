@@ -13,3 +13,7 @@ variable "aws_secret_key" {
 variable "github_token" {
   type = string
 }
+
+variable "environment" {
+  default = "staging"
+}
