@@ -4,22 +4,24 @@ resource "aws_amplify_app" "aws-trbrp" {
 
   # The default build_spec added by the Amplify Console for React.
   build_spec = <<-EOT
-    version: 0.1
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - yarn install
-        build:
-          commands:
-            - yarn run build
-      artifacts:
-        baseDirectory: build
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - node_modules/**/*
+    version: 1
+    applications:
+      - appRoot: apps/web
+        frontend:
+          phases:
+            preBuild:
+              commands:
+                - yarn install
+            build:
+              commands:
+                - yarn run build
+          artifacts:
+            baseDirectory: build
+            files:
+              - '**/*'
+          cache:
+            paths:
+              - node_modules/**/*
   EOT
 
   # The default rewrites and redirects added by the Amplify Console.
@@ -34,4 +36,21 @@ resource "aws_amplify_app" "aws-trbrp" {
   }
 
   access_token = var.github_token
+}
+
+resource "aws_amplify_backend_environment" "backend_service" {
+  app_id = aws_amplify_app.aws-trbrp.id
+  environment_name = var.environment
+
+}
+
+resource "aws_amplify_branch" "main" {
+  app_id      = aws_amplify_app.aws-trbrp.id
+  branch_name = "main"
+
+  stage     = "PRODUCTION"
+
+  environment_variables = {
+    REACT_APP_API_SERVER = "https://api.example.com"
+  }
 }
