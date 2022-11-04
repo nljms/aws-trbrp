@@ -30,7 +30,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-service-dev-00936-deployment/amplify-cfn-templates/function/itemsService-cloudformation-template.json",
         "logicalId": "functionitemsService"
       },
-      "lastPushTimeStamp": "2022-11-03T17:07:26.462Z",
+      "lastPushTimeStamp": "2022-11-04T06:02:41.024Z",
       "output": {
         "Region": "ap-southeast-2",
         "Arn": "arn:aws:lambda:ap-southeast-2:990838898128:function:itemsService-dev",
@@ -68,17 +68,17 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-service-dev-00936-deployment/amplify-cfn-templates/auth/service-cloudformation-template.json",
         "logicalId": "authservice"
       },
-      "lastPushTimeStamp": "2022-11-03T17:07:26.464Z",
+      "lastPushTimeStamp": "2022-11-04T06:02:41.831Z",
       "output": {
-        "UserPoolId": "ap-southeast-2_OkTDMLTEo",
-        "AppClientIDWeb": "2egceo6lijkseag8ibdfoa8p9o",
-        "AppClientID": "6ck5cf425jqtpfhpo866q9k09k",
-        "IdentityPoolId": "ap-southeast-2:aef5d961-ad2a-4434-b58c-7c817b33b62d",
-        "UserPoolArn": "arn:aws:cognito-idp:ap-southeast-2:990838898128:userpool/ap-southeast-2_OkTDMLTEo",
+        "UserPoolId": "ap-southeast-2_nA9dLiZzu",
+        "AppClientIDWeb": "qio9v9ng7p6ep6udj98uk57je",
+        "AppClientID": "7gcn4me2atdad9l7d3cmbacarv",
+        "IdentityPoolId": "ap-southeast-2:07686f4f-ffbf-4096-a7bd-0ec749ebf27a",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-southeast-2:990838898128:userpool/ap-southeast-2_nA9dLiZzu",
         "IdentityPoolName": "service_identitypool_db427524__dev",
         "UserPoolName": "service_userpool_db427524"
       },
-      "lastPushDirHash": "ybVG0N68ygxEt8koPUrf2yONnJw="
+      "lastPushDirHash": "JOxGCsSUUw86ZOBND8nyDTXsBdk="
     }
   },
   "api": {
@@ -99,7 +99,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-service-dev-00936-deployment/amplify-cfn-templates/api/itemsApi-cloudformation-template.json",
         "logicalId": "apiitemsApi"
       },
-      "lastPushTimeStamp": "2022-11-03T17:07:26.467Z",
+      "lastPushTimeStamp": "2022-11-04T06:02:41.027Z",
       "output": {
         "ApiName": "itemsApi",
         "RootUrl": "https://qoqbre7adh.execute-api.ap-southeast-2.amazonaws.com/dev",
@@ -117,7 +117,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-service-dev-00936-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
         "logicalId": "hostingamplifyhosting"
       },
-      "lastPushTimeStamp": "2022-11-03T17:07:27.140Z",
+      "lastPushTimeStamp": "2022-11-04T06:02:41.028Z",
       "output": {},
       "lastPushDirHash": "xfYzw6vKE6E4dHlTThgEfPfCHzw="
     }
