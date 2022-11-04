@@ -16,7 +16,7 @@ resource "aws_amplify_app" "aws-trbrp" {
               commands:
                 - yarn run build
           artifacts:
-            baseDirectory: .next
+            baseDirectory: out
             files:
               - '**/*'
           cache:
