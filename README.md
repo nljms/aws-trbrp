@@ -1,4 +1,4 @@
-# Turborepo starter
+# Turborepo starter [![Terraform](https://github.com/nljms/aws-trbrp/actions/workflows/terraform.yml/badge.svg)](https://github.com/nljms/aws-trbrp/actions/workflows/terraform.yml)
 
 This is an official Yarn v1 starter turborepo.
 
