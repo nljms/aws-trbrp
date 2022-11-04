@@ -16,7 +16,7 @@ resource "aws_amplify_app" "aws-trbrp" {
               commands:
                 - yarn run build
           artifacts:
-            baseDirectory: build
+            baseDirectory: .next
             files:
               - '**/*'
           cache:
@@ -42,6 +42,10 @@ resource "aws_amplify_backend_environment" "backend_service" {
   app_id = aws_amplify_app.aws-trbrp.id
   environment_name = var.environment
 
+  depends_on = [
+    aws_amplify_app.aws-trbrp,
+    aws_amplify_branch.main
+  ]
 }
 
 resource "aws_amplify_branch" "main" {
