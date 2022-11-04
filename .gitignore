@@ -34,12 +34,12 @@ yarn-error.log*
 
 
 #amplify-do-not-edit-begin
-amplify/\#current-cloud-backend
-amplify/.config/local-*
-amplify/logs
-amplify/mock-data
-amplify/backend/amplify-meta.json
-amplify/backend/.temp
+apps/service/amplify/\#current-cloud-backend
+apps/service/amplify/.config/local-*
+apps/service/amplify/logs
+apps/service/amplify/mock-data
+apps/service/amplify/backend/amplify-meta.json
+apps/service/amplify/backend/.temp
 build/
 dist/
 node_modules/
