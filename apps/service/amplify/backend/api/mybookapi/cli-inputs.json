@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/book/admin": {
+      "name": "/book/admin",
+      "lambdaFunction": "bookAdminHandler",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
