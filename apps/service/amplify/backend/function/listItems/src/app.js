@@ -46,6 +46,7 @@ app.get('/items/*', function(req, res) {
 
 app.post('/items', function(req, res) {
   // Add your code here
+  console.log({headers: req.headers})
   res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
 
