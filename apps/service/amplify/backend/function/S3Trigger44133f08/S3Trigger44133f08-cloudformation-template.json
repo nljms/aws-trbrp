@@ -2,31 +2,14 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.4.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
-    "CloudWatchRule": {
-      "Type": "String",
-      "Default": "NONE",
-      "Description": " Schedule Expression"
+    "env": {
+      "Type": "String"
     },
     "deploymentBucketName": {
       "Type": "String"
     },
-    "env": {
-      "Type": "String"
-    },
     "s3Key": {
       "Type": "String"
-    },
-    "storageddbserviceName": {
-      "Type": "String",
-      "Default": "storageddbserviceName"
-    },
-    "storageddbserviceArn": {
-      "Type": "String",
-      "Default": "storageddbserviceArn"
-    },
-    "storageddbserviceStreamArn": {
-      "Type": "String",
-      "Default": "storageddbserviceArn"
     }
   },
   "Conditions": {
@@ -47,24 +30,16 @@
         "aws:asset:property": "Code"
       },
       "Properties": {
-        "Code": {
-          "S3Bucket": {
-            "Ref": "deploymentBucketName"
-          },
-          "S3Key": {
-            "Ref": "s3Key"
-          }
-        },
         "Handler": "index.handler",
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "todoHandler",
+            "S3Trigger44133f08",
             {
               "Fn::Join": [
                 "",
                 [
-                  "todoHandler",
+                  "S3Trigger44133f08",
                   "-",
                   {
                     "Ref": "env"
@@ -78,9 +53,6 @@
           "Variables": {
             "ENV": {
               "Ref": "env"
-            },
-            "REGION": {
-              "Ref": "AWS::Region"
             }
           }
         },
@@ -91,8 +63,15 @@
           ]
         },
         "Runtime": "nodejs14.x",
-        "Layers": [],
-        "Timeout": 25
+        "Timeout": 25,
+        "Code": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        }
       }
     },
     "LambdaExecutionRole": {
@@ -101,12 +80,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "serviceLambdaRoleca2c3d84",
+            "S3Trigger44133f08LambdaRole44133f08",
             {
               "Fn::Join": [
                 "",
                 [
-                  "serviceLambdaRoleca2c3d84",
+                  "S3Trigger44133f08LambdaRole44133f08",
                   "-",
                   {
                     "Ref": "env"
@@ -175,59 +154,6 @@
             }
           ]
         }
-      }
-    },
-    "ddbserviceTriggerPolicy": {
-      "DependsOn": [
-        "LambdaExecutionRole"
-      ],
-      "Type": "AWS::IAM::Policy",
-      "Properties": {
-        "PolicyName": "lambda-trigger-policy-ddbservice",
-        "Roles": [
-          {
-            "Ref": "LambdaExecutionRole"
-          }
-        ],
-        "PolicyDocument": {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Action": [
-                "dynamodb:DescribeStream",
-                "dynamodb:GetRecords",
-                "dynamodb:GetShardIterator",
-                "dynamodb:ListStreams"
-              ],
-              "Resource": [
-                {
-                  "Ref": "storageddbserviceStreamArn"
-                }
-              ]
-            }
-          ]
-        }
-      }
-    },
-    "ddbserviceTrigger": {
-      "Type": "AWS::Lambda::EventSourceMapping",
-      "DependsOn": [
-        "ddbserviceTriggerPolicy"
-      ],
-      "Properties": {
-        "BatchSize": 100,
-        "Enabled": true,
-        "EventSourceArn": {
-          "Ref": "storageddbserviceStreamArn"
-        },
-        "FunctionName": {
-          "Fn::GetAtt": [
-            "LambdaFunction",
-            "Arn"
-          ]
-        },
-        "StartingPosition": "LATEST"
       }
     }
   },

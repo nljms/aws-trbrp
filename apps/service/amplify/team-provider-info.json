@@ -16,7 +16,7 @@
       "function": {
         "listItems": {
           "deploymentBucketName": "amplify-service-dev-185252-deployment",
-          "s3Key": "amplify-builds/listItems-4e315754744975653651-build.zip"
+          "s3Key": "amplify-builds/listItems-45427476485562616d4b-build.zip"
         },
         "bookAdminHandler": {
           "deploymentBucketName": "amplify-service-dev-185252-deployment",
@@ -25,6 +25,10 @@
         "todoHandler": {
           "deploymentBucketName": "amplify-service-dev-185252-deployment",
           "s3Key": "amplify-builds/todoHandler-6b653239462f394c6948-build.zip"
+        },
+        "S3Trigger44133f08": {
+          "deploymentBucketName": "amplify-service-dev-185252-deployment",
+          "s3Key": "amplify-builds/S3Trigger44133f08-554a49322b7835335036-build.zip"
         }
       },
       "auth": {
@@ -34,6 +38,17 @@
         "itemsApi": {},
         "mybookapi": {},
         "todos": {}
+      },
+      "storage": {
+        "CdkWorkshopDemoTableEE720AED186MGVGPXS275": {
+          "tableName": "CdkWorkshop-DemoTableEE720AED-186MGVGPXS275",
+          "region": "ap-southeast-2",
+          "arn": "arn:aws:dynamodb:ap-southeast-2:990838898128:table/CdkWorkshop-DemoTableEE720AED-186MGVGPXS275",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        },
+        "s3Bucket": {},
+        "ddbservice": {}
       }
     }
   }

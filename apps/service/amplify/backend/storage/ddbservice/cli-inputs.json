@@ -1,0 +1,16 @@
+{
+  "resourceName": "ddbservice",
+  "tableName": "ddbservice",
+  "partitionKey": {
+    "fieldName": "name",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "age",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "todoHandler"
+  ]
+}
