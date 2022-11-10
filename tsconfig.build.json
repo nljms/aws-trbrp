@@ -1,13 +1,9 @@
 {
   "extends": "./tsconfig.base.json",
   "include": [
-    "packages/app",
-    "packages/service/api/shipping-portal",
-    "packages/service/api/integrations",
-    "packages/service/api/shopify",
-    "packages/service/business",
-    "packages/service/data",
-    "packages/service/shared"
+    "apps/web",
+    "apps/docs",
+    "apps/service/amplify"
   ],
   "compilerOptions": {
     "noEmit": false
