@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    ".eslintrc.js",
+    ".prettierrc.js",
+    "apps/web",
+    "apps/docs",
+    "apps/service/amplify"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
