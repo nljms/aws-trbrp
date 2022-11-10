@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2019",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "allowUnusedLabels": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": false,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noEmit": true
+  }
+}
